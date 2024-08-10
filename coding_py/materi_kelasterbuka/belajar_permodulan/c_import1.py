@@ -1,0 +1,1 @@
+print("test: ini dipanggil ke file import_statement.py")

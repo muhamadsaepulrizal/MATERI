@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar_Table_HTML</title>
+</head>
+<body>
+
+    <!-- struktur table: -->
+    <!-- kotak horizontal kesamping disebut baris -->
+    <!-- kotak vertikal kebawah disebut kolom -->
+    <!-- lalu perkotak didalam table disebut cell -->
+    <!-- struktur simpel = table = tabelnya ( tr = baris (td = kolom) ) -->
+
+    <!-- struktur komplaex :-->
+    <!-- 1. table = untuk tabelnya ( thead = table header (tr = baris (th = tabel header ) ) )-->
+    <!-- 2. tbody = sama seperti simple diatas  -->
+
+    <!-- atribut table: biasa for atribur using CSS -->
+    <!-- border = menambah garis, cellspacing = jarak antar cell (biasa diberi 0), cellpadding = memberi luas cell -->
+    <!-- colspan = menggambungkan kolom , rowspan = menggabungkan baris-->
+
+
+    <!-- contoh:  -->
+    <table border="1" cellspacing="0", cellpadding="5">
+        <tr>
+            <td>baris 1, kolom 1</td>
+            <td>baris 1, kolom 2</td>
+        </tr>
+        <tr>
+            <td>baris 2, kolom 1</td>
+            <td>baris 2, kolom 2</td>
+        </tr>
+    </table>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th> <!--ini untuk pojik kiri atas saat ada 2 header, atas dan samping kiri-->
+                <th>Kolom 1</th>
+                <th>Kolom 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Baris 1</th>
+                <td>baris 1, kolom 1</td>
+                <td>baris 1, kolom 2</td>
+            </tr>
+            <tr>
+                <th>Baris 2</th>
+                <td>baris 2, kolom 1</td>
+                <td>baris 2, kolom 2</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td rowspan="3">1,1 & 2,1 & 3,1</td>
+            <td colspan="2"> 1,2 & 1,3</td>
+        </tr>
+        <tr>
+            <td>2,2</td>
+            <td>2,3</td>
+        </tr>
+        <tr>
+            <td>3,2</td>
+            <td>3,3</td>
+        </tr>
+    </table>
+    <hr>
+
+    <!-- latihan -->
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td>z</td>
+            <td>z</td>
+            <td>z</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>z</td>
+            <td rowspan="2" colspan="2">?</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>z</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>z</td>
+            <td>z</td>
+            <td>z</td>
+            <td>z</td>
+        </tr>
+    </table>
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belajar animation css</title>
+    <style>
+        /* .kotak{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            transition: 2s ease all;
+        }
+        .kotak:hover{
+            width: 500px;
+        } */
+
+        .kotak{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+        }
+
+        /* memanggil animasinya */
+        .kotak:hover{
+            animation: animasikotak 2s ease 3 alternate forwards;
+            
+        }
+        
+        /* membuat animasi */
+        @keyframes animasikotak{
+            0%{
+                width: 200px;
+            }
+
+            50%{
+                background-color: blue;
+                width: 500px;
+                height: 200px;
+            }
+
+            100%{
+                width: 500px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kotak"></div>
+    
+</body>
+</html>

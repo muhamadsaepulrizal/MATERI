@@ -1,0 +1,73 @@
+.kotak1, .kotak2, .kotak3{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    position: absolute;
+}
+
+body{
+    height: 1000px;
+}
+
+.kotak1{
+    background-color: salmon;
+    z-index: 2;
+}
+
+.kotak2{
+    background-color: lightskyblue;
+    top: 75px;
+    left: 75px;
+    /* position: static; */
+    z-index: 2;
+}
+
+.kotak3{
+    background-color: lightgreen;
+    top: 150px;
+    left: 150px;
+    z-index: 2;
+}
+
+.container{
+    width: 450px;
+    height: 450px;
+    border: 10px solid black;
+    margin: 50px auto;
+    position: relative;
+}
+
+.bar{
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    z-index: 9999;
+}
+
+.iklan{
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 100px;
+    bottom: 100px;
+    left: 100px;
+    right: 100px;
+    z-index: 9999;
+}
+
+.iklan .close{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid black;
+    text-align: center;
+    line-height: 30px; /*supaya X berada di tengah sesuai dengan ukuran kotak*/
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+}

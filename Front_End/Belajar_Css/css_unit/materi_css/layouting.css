@@ -1,0 +1,233 @@
+/* 
+
+Materi CSS_Layouting (pengaturan tata letak: ukuran, posisi, perilaku, dll)
+
+note : 2 tag pada HTML = div dan span
+tag div & span tidak punya arti apapun, digunakan u/ mengelompokkan tag-tag HTML yg lain
+div (div display defaultnya block) = digunakan untuk mengelompokkan tag-tag di HTML dengan classnya yg dipanggil di css
+span (span display defaultnya inline) = digunakan untuk contoh memberi penekanan pada beberapa kata,kalimat,konten 
+    di dalam isi suatu tag seperi didalam isi tag p
+
+
+
+1. Display
+inline: (baris ke samping)
+    -tidak menambah baris baru ketika dibuat
+    -lebar/tinggi elemennya sebesar konten yg ada di dlmnya
+    -tidak dapat diatur tinggi dan lebar dari elemen inline
+    -margin/padding hanya memengaruhi elemen secara horizontal, tidak vertikal
+    -elemen inlina:
+    b,strong,i,em,a,span,sub,sup,button,input,label,select,textarea,img
+    for img walaupun inline bisa diatur lebar/tinggi
+    
+inline block :
+    -tak ada elemen yg secara defultnya punya display inline-block
+    -harus diubah secara manual properti tsb
+    -perilaku dasarnya seperti inline
+    -perbedaannya, dapat diatur lebar/tinggi
+
+block :
+    -elemen HTML yg secara default menambahkan baris baru saat dibuat
+    -jika tak diatur lebarnya, maka lebar default dari elemen ini akan
+    memenuhi lebar dari browser/ parent-nya
+    -dapat diatur tinggi dan lebarnya
+    -didalam elemen block, dapat disimpan tag dengan elemen inline,inline-block
+    atau bahkan elemen block lagi
+    -elemen block:
+    h1,p,ol,ul,li,form,hr,div, dll
+
+none : (digunakan untuk menghilangkan sebuah elemen)
+--------------------------------------------------------------------------------------------------
+
+2. Dimensi & Overflow
+Dimensi
+satuan Dimensi dalam css :
+    -px (pixel) absolut = 
+    -% (persen) relative pada parent =
+    -in,cm,mm,pt (point),pc (pica) (satuan dari reallife) = 
+width = lebar
+height = tinggi
+
+overflow (untuk mengatur style dari sebuah elemen yg keluar dari parentnya)
+value Overflor:
+    -visible = defaultnya (konten yg overflow diperlihatkan)
+    -auto = (menambahkan scrool jika konten overfloe)
+    -hidden = menyembunyikan konten yg overflow
+    -scroll = mirip auto but, scroll tetap ada walaupun tidak terjadi overflow
+--------------------------------------------------------------------------------------------
+
+3. Box model
+-setiap elemen dihalaman berada didlm sebuah box model
+-kita bisa mengatur ukuran dan posisi kotak tsb
+-kita bisa memberi warna/ gambar sbg background kotak tsb
+
+note: tag *(bintang) di css artinya merubah semua halam web
+
+css box model mendefinisikan kotak yg dihasilkan oleh sebuah elemen,
+lalu menampilkannya sesuai dng format visualnya. seperti:
+ukuran, warna, diisi tulisan/gambar, dan dimana letak fosisinya
+komponen css box model:
+-margin = area transparan di sekitar kotak (diluar border)
+    margin-top, right,bottom,left
+-border = batas disekeliling content dan padding
+    border-top, right,butom,left
+-padding = area transparan di dlm kotak (antara content dan border)
+    padding-top, right,buttom,left 
+-content = tulisan,gambar,link, dll (yg didlm box)
+
+margin : Khusus untuk vertikal tidak saling menambahkan, 
+    jadi margin yg diambil yg paling besar (overlaping margin).
+    sedangkan untuk horizontal saling menambahkan
+    for margin vertikal jika diberi nilai negatif(-) maka elemen dibawahnya ikut keatas, kebawah
+    for auto, harus ada margin-right&left maka posisi box akan di center bodynya
+    shorthand = margin: (atas/kanan/bawahkiri) (kanan/kiri) (bawah) (kiri); searah jarum jam
+
+padding & border:
+padding = jarak antara sebuah kotak dengan konten, padding tidak bisa diberi nilai negative
+    padding tidak punya nilai auto, padding menambah ukuran elemen
+    jadi untuk menentukan ukuran harus ditambah antara margin&padding.
+border = (border: tebal-border(lebar/widht) stylenya warna;)
+    style border = solid(kotak),dotted(kotak titik2), dashed(kotak strip2), double(kotak ganda)
+    for border satu sisi contoh = border-left
+    jadi untuk border juga ditambah dengan margin dan padding
+kalkulasi antara margin,padding, dan border untuk menentukan ukuran
+
+untuk mengatasi masalah diatas(kalkulasi):
+box-sizing: border-box; (maka tidak perlu kalkulasi)
+note : biasa yg diatur itu width(lebarnya),karena tinggi akan sesuai konten
+----------------------------------------------------------------------------------------------
+
+4. reset
+karena banyak elemen HTML yg sudah punya default margin sendiri
+gunanya supaya kita punya kendali penuh mengedit dari 0 si cssnya
+
+syntaxnya: di goggle cari css reset
+
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /*HTML5 display-role reset for older browsers 
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+------------------------------------------------------------------------------------
+
+5. Float (tidak dianggap di konten/ kolaps)
+properfi untuk mengatur posisi sebuah elemen. Digunakan ketika:
+-text wrapping (membuat teks mengelilingi gambar/ elemen lain)
+-image gallery (membuat serangkaian gambar menjadi galeri)
+-multi column layout (membuat halaman memilki beberapa kolom)
+-dll
+
+gambaran sederhana sifat float:
+(ketika 2 kotak biru dan hijau, sihijau diberi float: left;
+maka di biru naik berada dibelakang si hijau karena menganggap hijau tak ada)
+(jadi yg diberi float akan out-of flow)
+-none = defaultnya
+-left = akan berada dikiri
+-right = akan berada dikanan
+normal flow = seperti inline & block & inline-block, dll
+out-of flow = jika diberi float
+-----------------------------------------------------------------------------------
+
+mentasi masalah float =
+-menggunakan proferti overflow (overflow:auto;) pada yg diberi float
+-menggunakan div kosong (di ccsnya antara float dan clear harus sama)
+    (jika float ada 2(kanan&kiri) maka gunakan clear dengan nilai both)
+-menggunakan teknik micro clearfix
+ini lebih rekomended : di goggle cari micro clearfix dan taruh class cf ke pembungkus konten
+yg diberi float di htmlnya
+
+6. position
+(untuk menggerakan salah satu elemen tanpa mempengaruhi elemen lain)
+(for position no-static akan membuat sebuah elemen jadi seolah berada
+berbeda dimensi dengan elemen lainnya)
+(for position non-static juga dpt menggunakan properfi:
+top,left,buttom, & right untuk atur posisinya)
+position static:
+-static = default dari position
+
+non-static:
+-relative = diposisi yg sama tapi naik 1 dimensi (jarang/tidak pernah dipakai u menggerakan elemen)
+    dan bisa digeser kemanapun menggunakan top,bottom,left,right
+    tanpa mengganggu elemen lainnya
+    dan ruang didimensi sebelumnya masih ada dan ditak diisi elemen lainna secara default
+    jika top:0,left:0 maka posisi tidak bergerak
+    relative maksudnya menggerakan posisi relative terhadap posisi awalnya
+    (jarang digunakan, kecuali untuk menaikkan 1 dimensi sebuah elemen)
+    note: koordinat 0,0 nya relative di tempat asal elemennya
+
+-absolute = diposisi yg sama naik 1 dimensi tapi (sering dipakai u menggerakan elemen)
+    ruang dimensi sebelumnya otomatis diisi elemen lain/setelahnya secara default
+    dan bisa gunakan top,bottom,left,right bedanya ruang sebelummnya dianggap gak ada
+    elemen dgn posisi absolute relative terhadap posisi parentnya jadi
+    jika diberi top 100px akan dihitung dari body/apapun parentnya(yg berada didimensi yg sama) karena
+    tidak relative terhadap parentnya kalau parentnya tidak berada didimensi yg sama jadi
+    parentnya juga harus punya position non-static dan
+    position yg tepat u parent nya adalah relative dan juga
+    hanya body/web browser yg jadi satu2 parent yg akan selalu berada didimensi yg sama
+    note : parent yg dimaksud adalah yang terdekat (parent ke 1) yg punya posisi non-static
+    note : koordinat 0,0 nya relative terhadap parentnya
+    note : if position absolute margin auto akan diabaikan
+
+note : absolute & relative cenderung seringkali berpasangan (absoulute for konten yg digerakan
+dan relative for parent untuk menangkap posisi yg digerakan dengan position absolute)
+
+-fixed = diposisi yg sama naik satu dimansi tapi
+    dia akan selalu relative terhadap windowsnya/browser/apapun sebutannya
+    dan dia tidak peduli pada parent apapun 
+    bahkan jika parentnya diberi position non-static dan
+    elemennya akan terkunci diposisi yg ditentukan bahkan jika di scroll kebawah pun
+    position ini biasa digunakan for topbar(navigasi diatas), dll
+    note : koordinat 0,0 nya relative terhadap windows/browser/dll sebutannya apa
+
+- z-index = digunakan u mengatur tumpukan elemen ketika position non-static
+    cara penulisan = z-index: nilai(1,2,3,dll); (semakin besar nilainya akan menentukan
+    posisi paling atas)
+    note = u mengatur posisi paling depan gunakan nilai terbesar 999 dan
+    jik terkecil gunakan -999
+    note : z-index hanya berpengaruh kepada position non-static
+
+
+
+**/

@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:'Times New Roman', Times, serif;
+    line-height: 1.8em;
+}
+
+header{
+    background-color: #ccc;
+    background-image: url(/img/keyboard1.jpg);
+    height: 100vh; /*relativ terhadap tinggi(height), 100 artinya 100% tinggi layar*/
+    background-size: cover; /*gambar nya supaya rapih*/
+    background-position: center; /*supaya saat diperkecil gambar-nya selalu center sampai gak muat lagi*/
+    /*display flex u buat elemen tulisan di atas gambar bisa diatur*/
+    display: flex; 
+}
+
+h1{
+    /**font-size: 4rem; /*4rem karena rootnya gak diberi font-size maka `16*4=64**/
+
+    /*artinya 4% dari lebar viewportnya, jadi saat layar dikecilkan akan relative selalu 4%-nya*/
+    /* font-size: 4vw;  */
+
+    /*tapi akan lebih baik lagi jika pakai vmax karena akan selalu relative terhadap yg terbesar,
+    pada saat dikecilkan otomatis ukuran layar vmax yg berganti & font-size selalu relativ ke yg terbesar*/
+    font-size: 4vmax; 
+
+
+    /*karna em dipake u length (bukan font-size) relative terhadap font-side satu lingkungan dulu 4rem=64, maka 1.2em*64 = 72*/
+    line-height: 1.2em; 
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+    text-align: center;
+    margin: auto;
+}
+
+section{
+    margin: 30px auto;
+    width: 80%;
+}
+
+section .detail{
+    font-size: 1.4rem;
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5em 0;
+    margin-bottom: 2em;
+    color: #333;
+}
+
+section p{
+    font-size: 1.2em;
+    margin-bottom:  1em;
+    text-indent: 1em;
+}

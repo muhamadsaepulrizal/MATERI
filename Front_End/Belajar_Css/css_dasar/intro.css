@@ -1,0 +1,86 @@
+/*  anatomi css : selector { property: value; } 
+    contonya    :   h1 { color : blue; }
+    contoh lain:
+    h1{
+    font-family: "Courier New"
+    text-align: center;
+    font-size: 30px;
+    }
+
+    cara memakai css di html:
+    1. embed: tag style untuk didalam/ satu file dengan html (dibagian head di html)
+    2. menggunakan atribut di dalam tag html contoh (<h1 style ="" >hallo css</h1>
+    3. external: menggunakan file terpisan khusus dengan format (bebas.css)
+
+    1. font styling :
+    shorthand font : ukuran font/line height jenis font; (3 komponennya wajib ada)
+    font-family = atur jenis font yg dipakai (arial, times new roman, dll)
+    font-size = atur ukuran font
+    font-weight = atur ketebalan font
+    font-variant = ubah font jadi small caps
+    font-style = ubah font jadi bercetak miring
+    line height = atur spasi antar baris
+
+    2. Teks styling :
+    color = memberi warna pd tulisan
+    text_align = atur format paragraf/teks (rata kiri/rata kanan/rata kiri kanan)
+    text-indent = beri indentasi pada paragraf/teks (menjorok kekanan/kekiri)
+    text-decoration = atur dekorasi pada teks (underline, line through=dicoret, dll)
+    text-transform = ubah jenis huruf jadi huruf besar/kecil/kapital(huruf awal dikata Besar)
+    letter-spacing = atur spasi antar huruf
+    word-spacing = atur spasi antar kata
+
+    3. Background
+    background-color = atur warna pada background
+    background-image = atur gambar yg akan digunakan pada background
+    background-position = atur posisi gambar pada back ground/ top/center/button left/center/right
+    background-repeat = atur jenis pengulangan gambar pada background
+                        repeat-x kesamping, repeat-y kebawah
+                        no-repeat = 1 sesuai ukuran, if use no-repeat bisa akses background-position
+
+    4. selector (pengenal)
+    elemen HTML (lebih rekomend dari class) =
+    id (tidak rekomend for css)= penulisan diawali pagar (#idnya), 1 elemen 1 id, 
+        dapat dipakai sbg penanda hal for link, dipakai juga u/ javascript, 
+    class (rekomend for css)= penulisan diawali titik (.classnya), 1 class bisa dipakai oleh beberapa tg elemen HTML
+    complex selector =
+    note: tanda(,) bisa diartikan dan untuk memberi styling yg sama, 
+    spasi bisa dipakai untuk arti didalam contoh (ul a) = styling a yg didalam ul
+    jadi, 1.HTML < 2.Class < 3.Id
+
+    5. pseudo class
+    :link = style default pada sebuah link (a yg punya href)
+    :hover = style ketika kursor mouse berada diatas sebuah link/elemen
+    :active (saat diklik) = style ketika sebuah link di klik (keadaan aktif)
+    
+    :first-child = memilih elemen first dari sebuah parent(el pembungkusnya)
+    :last-child = memilih elemen last dari sebuah parent
+    :nth-child(n) = memilih elemen ke-n dari sebuah parent
+        n bisa arti urutan (1)(2) atau pola (2n), (3n+2), (4n-1) atau
+        ganjil (odd) & genap (even) 
+    
+    :first-of-type = memilih elemen pertama dari sebuah jenis tag
+    :last-of-type = memilih elemen terakhir dari sebuah jenis tag
+    note = contoh penulisan (h1:link{})
+
+    6. inheritance(pewarisan)
+    sebuah elemen mewarisi beberapa nilai dari properti
+    yg dimiliki oleh elemen parent-nya
+    contoh ilustrasi = ortu punya warna mata merah, anak punya warna mata merah
+    contoh properti yg diwariskan:
+    color,font,letter-spaccing,line-height,line-style,text-align,
+    text-indent,text-transform,visibility,white-space
+
+    contoh yg tidak diwariskan:
+    tag a = a { color: inherit }
+
+    7. specificity
+    (setiap deklarasi css(selector) punya berat yg berbeda.
+    Berat tsb menentukan seberapa spesifik sebuah elemen dpt dipilih oleh selector)
+
+    cotoh tag sama css beda maka yg terakhir ditulis akan di tampilkan atau menimpa yg sebelumnya
+    prioritasnya spesifik:
+    inline > id > calss > element
+
+
+*/

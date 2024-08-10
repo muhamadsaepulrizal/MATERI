@@ -1,0 +1,252 @@
+/* 
+KENAPA CSS3?
+-membuat website menjadi lebih fleksibel dan interaktif
+-membuat mock-up dengan cepat tanpa bantuan bahasa scripting (javascript)
+-mengurangi penggunaan gambar = kecepatan load halaman
+-penggunaan selector untuk menghindari penggunaan markup yang boros
+
+properti yang sering digunakan CSS3 : 
+http://www.quackit.com/css/css3/properties
+
+1. border-radius = u membuat kotak jadi ujung2 ny jadi tumpul/bulat
+-if gunakan border-radius hati2 karena ada kemungkinan kontent didalammnya
+    seperti tulisan akan keluar
+-if ingin bentuknya lingkaran sempurna maka nilai border-radius 
+    harus setengah nilai width & height atau bisa gunakan nilai 50%
+-if ingin hanya menumpulkan salah 1 sisi saja maka bisa gunakan 
+    contoh = border-top-right-radius: 50% ;
+    artinya = (tumpulkan bagian atas sebelah kanan) atau bisa juga
+    gunakan shorthand : border-radius : ataskiri ataskanan bawahkanan bawahkiri ;
+-if dimasukkan image maka ukuran & bentuknya akan sama 
+    seperti bentuk yg sudah distyle menggunakan border-radius (di CSS)
+-tapi if tambahkan img nya di html maka gambarnya akan keluar/ tidak sesuai ukuran borde-radius
+    cara atasinya gunakan = overflow: hidden; lalu atur ukuran image nya (width & height)
+-------------------------------------------------------------------------------------------
+
+2. Transparansi
+-propertinya opacity dengan valuenya 0-1 contoh
+    opacity: 0.8 (sesuaikan dengan kebutuhan)
+-opcity ini juga akan memberi sipat default pada anak anaknya
+    jadi jika sebuah parent kita beri opacity maka elemen didalamnya 
+    juka akan terkena opacity dengan nilai opacitynya sama dan
+    jika ingin menambah tranparansi elemen didalam parentnya maka 
+    si nilai opacity akan dihitung dari nilai opacity parentnya
+-jadi kita tak bisa membuat sebuah elemen child solid/ gak transparan
+    ketika elemen parents nya opacity
+-jika ingin hanya elemen parentnya yg transparan, gunakan rgba
+    rgba() = red green blue alpha (), alpha = transparan jadi kita bisa beri warna serta transparansi
+    caranya = rgba(255, 165, 0, transparansinya(0-1) )
+    jasi maksudnya kita memberi transparansi pada warna bukan elemennya sehingga elemen childnya gak ikut
+-satu lagi u memberi transparansi hasla() = hue saturation lightness alpha()
+    hsla(0, 88%, 55%, 0.5) = koma pertama warna, koma terakhir transparansi
+    h/hue = roda warna
+-------------------------------------------------------------------------------------------------------------
+
+3. box-shadow = memberikan bayangan pada elemen yg dibuat
+-default bayangannya berada disebelah kanan bawah gambar
+-empat nilai wajib yg harus ada di box-shadow:
+    <x-offset> <y-offset> <blur> <color>
+    <x-offset> = u mengatur jarak bayangan pada sumbu horizontal (numeric px)
+    <y-offset> = u mengatur jarak bayangan pada sumbu vertikal (numeric px)
+    <blur> = blur pada bayangan 
+    <color> = warna bayangan
+-dua tambahan properti opsional box-shadow:
+    <x-offset> <y-offset> <blur> (<spread>) <color>
+    <spread> = size/ukuran bayangan (numeric px)
+note : bayangan kecil dibawah (box-shadow: opx 30px 10px -20px rgba(0,0,0,.75)
+
+    (<inset>)<x-offset> <y-offset> <blur> (<spread>) <color>
+    <inset> = membuat bayangan berada didalam kotak cara memberi nilainya dengan (inset)
+        bayangannya blur kedalam menjorok
+note : u membuat bayangan ada 2 bisa seperi ini :
+    box-shadow: 5px 5px 5px rgba(236, 6, 6, 0.5),
+        -5px -5px 5px rgba(0, 0, 255, .5);
+    tinggal diatur sesuai keinginan
+-------------------------------------------------------------------------------------------------
+
+4. text-shadow :
+sama seperti box-shadow. text-shadow juga punya 4 nilai wajib:
+-<x-offset> <y-offset> <blur> <color>
+    <x-offset> = u mengatur jarak bayangan pada sumbu horizontal (numeric px)
+    <y-offset> = u mengatur jarak bayangan pada sumbu vertikal (numeric px)
+    <blur> = blur pada bayangan 
+    <color> = warna bayangan
+-sama seperti box-shadow, text-shadow juga bisa punya dua bayangan seperti berikut
+    text-shadow: 5px 5px 10px green, -5px -5px 10px red;
+    artinya diatas punya 2 bayangan 1 di kanan bawah warna hijau, 1 lagi kiri atas warna merah
+-bisa juga kita gunakan u seolah2 text nya 3d seperti dibawah:
+    color: white;
+    text-shadow: 0 2px 1px black;
+-------------------------------------------------------------------------------------------------
+
+5. gradient : teknik memberi warna gradasi pada sebuah elemen
+note : bukan property css3, melainkan value u backround-image
+
+-linear-gradient = memberikan warna secara garis lurus (atas ke bawah)
+    contoh penulisan = background-image: linear-gradient(<warna awal>, <warna akhir>, <warna ke-n>);
+    bisa juga memberi warna >2 tambah saja koma lalu tulis warnanya
+    bisa juga atur arah dari gradientnya dari default = atas kebawah jadi kiri kekanan, dll
+    backround-image: linear-gradient(<sudut> | <arah>, <warna-1>, <warna-2>, <warna ke-n>);
+    dari kanan ke kiri = background-image: linear-gradient(90deg, red, green);
+    u diagonal = background-image: linear-gradient(45deg, red, green);
+    dengan arah :
+    to bottom = atas kebawah
+    to top = bawah keatas
+    to left = kanan kekiri
+    to right = kiri kekanan
+note : color stop = memberikan bobot warna yang berbeda
+    contoh penulisannya = background-image: linear-gradient(to right, red 63%, green 80%);
+    tinggal menambah % setelah warnanya
+
+-radial-gradient = memberikan warna secara melingkar
+    syntax sederhana = backround-image: radial-gradient(<warna awal>, <warna akhir>)
+    minimal 2 buah warna dan bisa lebih, warna awal akan jadi pusat warna ditengah dengan bentuk elips.
+note : bisa juga berikan color stop dengan memeberi persen(%)/pixel setelah warna tertentu
+-syntax lengkap = 
+    radial-gradient (
+        <tipe> <jangkauan> at <posisi-y> <posisi-x>,
+        <warna-1>,
+        <warna-2>,
+        ...,
+        <warna-n>
+    );
+    tipe= ellipse(bulan lonjong kesamping) / circle(bulat sempurna)
+    jangkauan = jarak dari pusat gradient ke sisi terluarnya 
+        (closest-corner = jarak pusat gradient ke sudut terdekat elemen)
+        (closest-side = jarak pusat gradient ke sisi terdekat elemen)
+        (farthest-corner = jarak pusat gradient ke sudut terjauh elemen)
+        (farthest-side = jarak pusat gradient ke sisi terjauh elemen).
+
+    at
+    posisi-y = sumbu vertikal (top center bottom)/ pixel
+    posisi-x = sumbu horizontal (left center right)/ pixel
+    warna2 dan bisa diberi color stop
+--------------------------------------------------------------------------------------------------------
+
+6. @font-face = u mengelola font pada css3
+note : font selalu harus ada di sistem operasi client/user 
+u mengatasi hal diatas bisa guanakan web = google fonts
+    lalu tinggal simpal script link nya sebelum style jika di html, 
+    lalu u memakainya di css ada sytaxnya juga
+u mengatasi dng css3 @font-face
+syntaxnya =
+    @font-face{
+        font-family : 'namafontbaru';
+        src: url('lokasi/file/fontBaru.eot');
+        src: url('lokasi/file/fontBaru/ttf') format('truetype'),
+            url('lokasi/file/fontBaru/woff') format('woff');
+            dll
+    dan u memanggilnya dengan font-family: 'namafontbaru';
+
+layannan u mendownload font = fonts.google.com / fontsquirell.com / fontspring.com
+    webtype.com / typotheque.com / dll
+note : perhatikan licence boleh dipakai atau tidak.
+note : disarankan di fontsquirell.com ada 4 icon ( icon ke-2 yg harus diperhatikan for web)
+    u membantu di web ini ada menu Webfont Kit (dimana bisa ada syntax cssnya langsung seperti sumtax diatas)
+    u web disarankan format fontnya = woff dan di web fontsquirell.com ada konpersi fotmat,
+    di bagian Generator.
+------------------------------------------------------------------------------------------------------------------
+
+7. vendor prefixes = supaya syntax css kita kompatible di semua rowser
+-sintaks khusus yg harus ditambahkan untuk bebrapa ptoperty css3 supaya jalan di semua browser
+-prefix = awalan, vendor = browser. berikut cara menambahkan :
+    -webkit-<properti-css3> (chrome,safari,opera)
+    -moz-<properti-css3> (firefox)
+    -ms-<properti-css3> (internet explorer)
+    -o-<properti-css3> (opera versi terdahulu)
+-kenapa ? karena tak semua browser tidak support css3. contoh dicss3 ada filter
+    cara gunakannya tambahkan vendor prefix : 
+    -webkit-filter: grayscale(100%)
+    filter: grayscale(100%); (membuat foto jadi abu abu)
+-yang butuh vendor prefix lainnya :
+    shouldiprefix.com (bisa cek u tahu mana saja yg perlu vendor prefix),
+    caniuse.com (search syntax u tahu apakah perlu vendor prefix), 
+    http://pleeease.io/play/ (bisa copas syntax u tahu apakah perlu pakai vendor prefix),
+    pakai emmet
+note : web yg kita bikin harus dicek di semua browser, karena tak semua tampil sesuai di semua browser
+--------------------------------------------------------------------------------------------------------
+
+8. filter = u berikan efek visual pada gambar, background, atau border
+-cara penulisan = filter: <tipe-filter>;
+-tipe-filter = blur(px),brightness(angka/%),contrast(angka/%),saturate(angka/%),
+    grayscale(angka/%)=jadi abu,sepia(angka/%)=jadi kuning,hue-rotate(deg=derajat)=merubah warna objek gambar
+    invert(angka/%),opacity(angka/%),drop-shadow(seperti box-shadow).
+note: bedanya pakai filter dengan langsung opacity/box-shadow yaitu, jika kita pakai filter maka-
+    operasi matematika dibelakang komputer terbantu menggunakan hardware (kita) jadi lebih cepat,
+    sedangkan jika langsung tanpa filter murni kemampuan browser 
+note: pakai filter si drop-shadow juga bisa digunakan kepada teks jadi bisa menggantikan 
+    box-shadow & text-shadow dengan filter
+note: filter: drop-shadow(); juga pintar dapat mengenali objek dalam gambar
+note: bisa juga gunakan 2 nilai di filter pakai spasi (filter: blur() grayscale(); )
+note: bisa juga gunakan web (http://html5-demos.appspot.com/ static/css/filters/index.html
+    untuk atur atur value-value gambar nanti kita copas cssnya
+note: perhatikan vendor prefix dalam gunakan filter
+-------------------------------------------------------------------------------------------------------
+
+9. transform = memungkinkan dapat memanipulasi format visual dari elemen html (ukuran,bentuk,posisi)
+- ada 2 jenis transform = (2d & 3d)
+2d : 
+-cara penulisan transform: <fungsi>;
+-4 fungsinya : scale(memperbesar/kecil) = scaleX(angka), scaleY(angka). u menggambungkan x&y pakai koma(,)
+    rotate(memutar) = rotate(deg), rotateX(deg), rotateY(deg) 
+    skew(membuat condong/miring) = skew(deg), skewX(deg), skewY(deg) 
+    translate(ubah posisi) = translateX(px), translateY(px). jika digerakan tak mengganggu elemen lain mirip absolute
+        tapi lebih baik translate daripada absolute
+
+note: bisa juga pakai nilai yaitu setelah fungsi 1 lalu spasi fungsi 2
+note: transform mungkin perlu vendor prefix
+-----------------------------------------------------------------------------------------------------
+
+10. transition = mengubah nilai properti html secara halus
+- ada keadaan awal dan keadaan akhir / 2 keadaan tidak ada keadaan antara
+- cara penulisan = transition: (property) <durasi>(4s/4ms) (fungsi) (delay);
+- simpan transition selalu dikeadaan awal
+- animatable properties = (backround-color, backround-position, bakround-size, borde, color, filter, font-size, line-heigth,
+    top left bottom rigth, margin padding, width height, opacity, transform, word-spacing, letter-spacing. dll
+- non animatable properties = font-family, display, position. dll
+- properti = tambahkan properfi cs lain untuk transisi / 
+    ingin seperti apa geraknya dikeadaan akhir sesuaikan pakai properti 
+    caranya taru properti di keadaan akhir dan beri transition di keadaan awal.
+- (fungsi) / timing function
+    - ease
+    - ease-in (lambat lalu semakin cepat)
+    - ease-out
+    - ease-in-out
+    - linear
+    - cubic-bezier(w,x,y,z) = punya 4 nilai bisa atur gerakan transisinya
+- delay / waktu tunggu (s/ms) = jadi menunggu sebelemun transisi
+----------------------------------------------------------------------------------------------------
+
+11. animation
+- ada keadaan awal, keadaan antara(keyframe #1, #2, #3, dst)
+- cara membuat animation =
+    @keyframes [nameAnimatio] {
+        from {
+            [properti-css]
+        }
+        to {
+            [properti-css]
+        }
+    }
+    note = from & to bisa diganti dengan keyframe pakai(%) supaya dapat beberapa keadaan
+        lalu setelah membuat keyframes kita panggil di keadaan akhir/elemennya dengan cara
+- syntax dengan nilai umum = animation: nameAnimation durasi timingFunction;
+- syntax dengan nilai komplit animatin: 
+    [name] = nama animasi
+    [durasi] = durasi animasi 
+    [timing-function] = cara bergerak
+    [delay] = waktu tunggu
+    [iteration-count] = <angka> berapa kali diulang / <infinite> terus diulang
+    [direction] = normal(default) / reverse(akhir ke awal) /
+        alternate(gantian, awal keakhir, lalu akhir keawal) / 
+        alternate-reverse(gantian tapi mulai dari akhir dulu). 
+    [fill-mode] (akhir dari animasi) :
+        none = defaultnya
+        forwards = berhenti dikeadaan akhir 
+    [play-state] :
+        running = defaultnya
+        paused = berhentikan animasi (digunakan di javascript)
+----------------------------------------------------------------------------------------------------
+
+
+*/

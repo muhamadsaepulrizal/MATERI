@@ -1,0 +1,25 @@
+h1{
+    color: darkblue;
+    font-size: 100px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: lowercase;
+    letter-spacing: 10px;
+}
+p{
+    color: rgb(15, 21, 15);
+    text-align: justify;
+    text-decoration:underline;
+    text-transform: capitalize;
+    word-spacing: 5px;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: rgb(244, 252, 254);
+    background-image: url(gambar/c3.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}

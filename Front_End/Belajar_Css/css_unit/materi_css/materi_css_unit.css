@@ -1,0 +1,83 @@
+/* 
+-----Materi Css Unit-----
+
+1. Value Unit
+Value (nilai) & Unit (satuan) pada css contoh:
+.selectro{
+    width: 80%;
+    height: 500px;
+}
+80 dan 500 = value, % dan px = unit(satuan)
+Kumpulan Css Value = Integer(angka saja/ bil bulat), number(angka tapi bisa pecahan), 
+peecentage(persen / %), dimension(nilai yg digabungkan dengan satuan).
+- integer = contoh pada z-index (hanya angka seperti 1,2,3, -4, -5, dll).
+- number = contoh pada opacity (0.8) pakai titik untuk koma-nya. dan untuk koma(.) 0-nya bisa hilang jadi (.8).
+- persentage(%) = merepresentasikan sebagian dari nilai tertentu. % selalu relative terhadap nilai yg lain.
+    contoh relative terhadap parent atau pembungkusnya, dll.
+- dimension = number yg memiliki satuan di belakangnya. kategori dimension:
+    1. length
+        1. absolute length (pasti/relative)
+        satuan absolute: px(pixel), pt(point), pc(pica), cm, mm, in
+        2. relative length 
+        satuannya:
+        % = persentase ukuran relative terhadap ukuran elemen parent.
+        em = relatif pada ukuran font(font-size) yg sedang digunakan. nilai defaultnya (jika tak ada parent): 1em = 16px
+            untuk em hati-hati karena akan menumpuk keatas nilainya sampai ada nilai fix-nya (pixel)
+            biasa digunakan untuk length (elemen selain font-size) elemen (padding, margin, width, height) 
+            em bisa digunakan untuk satuan nilai padding
+            dan bisa membuat tombol dengan padding nilai satuan em, lalu tombol berikutnya tinggal kasih nilai font-size yg relatif terhadap tombol ke satu.  
+            elemen dengan em hanya relativ terhadap ukuran font yg bersangkutan, kalo gak ada baru nyari ke parent
+        rem = relatif pada ukuran font "root" / biasa di tag <html>. nilai default = 16px, 
+            untuk rem hanya melihat atau terpegaruh di tag <html> atau (:root)
+            biasa digunakan u typography (font)
+        ch = relatif pada lebar karakter '0' dari font(font-family) yg sedang digunakan.
+        Viewport adalah ukuran layar (komputer,hp) yg dilihat, satuan-nya persen %:
+        vh = relatif pada tinggi dari viewport.
+        vw = relatif pada lebar dari viewport.
+        vmin = relatif dimensi terkecil sebuah viewport diambil yg terkecil panjang atau lebarnya sebuah layar computer,hp.
+        vmax = relatif pada dimensi terbesar sebuah viewportm, kebalikan dari vmin.
+
+    2. angle: sudut, biasa untuk rotate
+        salah satu satuannya: deg(derajat), rad(radian), grad(gradian), turn(berapa putaran)
+
+    3. time: waktu biasa di transisi, animasi, dll
+        s untuk detik, ms = mili detik
+
+    4. resolution: resolusi pada tampilan web, biasa digunakan u cetak sesuatu, biasa digunakan aplikasi web u cetak      sertifikat atau printing contoh @media print and (mint-resolution : 300dpi){...} 
+        satuan :
+        dpi = dot(design printing) per inch (berapa titik u setiap inch-nya)
+        dpcm = dot per centimeter 
+        dppx = dot per pixel
+--------------------------------------------------------------------------------------------
+
+2. Css fungsi calc() = calc (calculate)
+-sebuah fungsi pada css, yg memungkinkan kita untuk melakukan operasi matematika / kalkulsi pada nilai
+dari sebuah properti.
+-nilai yg bida di kalkulasi oleh calc():
+    length, angle, time, percentage, number(tak punya satuan)
+-cara nulis = properti: calc(expression);
+-contoh = width: calc(100%-30px); , widht: calc(10px + 100px); 
+    dan perkalian = margin: calc(3 * 10px); syarat perkalian salah satu nilai harus dengan nilai tak punya satuan, 
+    pembagian pun sama dan u pembagian tak boleh dibagi dengan 0.
+    dan harus ada sepasi antara operator dan operand-nya
+-untuk melakukan perhitungan elemen dengan flex
+-bisa juga Nesting = .el { width: calc(100% / 3 - 1rem * 2);}. prioritas berlaku dalam perhitungan.
+-calc lebih sakti dari SASS.
+-bisa juga custom properties:
+    :root{
+        --header-height: 32px;
+    }
+    .el{
+        height: calc(100vh - var(--header-height));
+    }.
+
+
+
+
+
+
+
+
+
+
+*/

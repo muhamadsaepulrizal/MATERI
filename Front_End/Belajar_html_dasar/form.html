@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar_HTML_Form</title>
+</head>
+<body>
+
+    <!-- Form adalah tag untuk membuat suatu inputan dari user -->
+    <!-- input = untuk input -->
+    <!-- textarea = for pesan, komentar, dll -->
+    <!-- select = for dropdown or kobo box -->
+    <!-- button = for tombol mengirim data -->
+    <!-- label =  for menandai sebuah elemen input -->
+
+    <!-- contoh -->
+    <form action="">
+        <label for="username">username: </label>
+        <input type="text" id="username">
+
+        <br><br>
+
+        <label for="pass">password: </label>
+        <input type="password" id="pass"> <!--for password teks akan disembunyikan-->
+
+        <br><br>
+
+        <!-- name = for memilih hanya bisa 1 antara pria or wanita -->
+        <input type="radio" id="pria" name="jk"> <label for="pria">pria</label>
+        <input type="radio" id="wn" name="jk"> <label for="wn">wanita</label>
+
+        <br><br>
+
+        <!-- checkbox for bisa memilih > 1  -->
+        <input type="checkbox" id="peny"><label for="peny"> penyanyi</label>
+        <input type="checkbox" id="olah"><label for="olah"> olahraga</label>
+        <input type="checkbox" id="bk"><label for="bk"> baca buku</label>
+
+        <br><br>
+
+        <!-- textarea = for artikel, testimoni, komentar, dll -->
+        <textarea name="" id=""></textarea>
+        <br><br>
+
+        <!-- select = untuk memilih (option = item yg dipilh ) -->
+        <select name="" id="">
+            <option value="">Garut</option>
+            <option value="">Bandung</option>
+            <option value="">Jakarta</option>
+        </select>
+        <br><br>
+
+        <!-- submit = for kirim data, reset = for menghapus data,  -->
+        <!-- value = "mengganti default submit" -->
+        <!-- <input type="submit" value="kirim"> -->
+        <button type="submit">Kirim</button>
+
+    </form>
+    <hr>
+
+    <!-- Latihan -->
+    <form action="">
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td><label for="text">Text:</label></td>
+                <td><input type="text" id="text"></td>
+            </tr>
+            <tr>
+                <td><label for="pass">password: </label></td>
+                <td><input type="text" id="pass"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="r1">Radio 1</label>
+                    <input type="radio" id="r1" name="pilihr">
+
+                    <label for="r2">Radio 1</label>
+                    <input type="radio" id="r2" name="pilihr">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="c1">checkbox 1</label>
+                    <input type="checkbox" id="c1">
+
+                    <label for="c2">checkbox 2</label>
+                    <input type="checkbox" id="c2">
+                </td>
+            </tr>
+            <tr>
+                <td>Combo Box: </td>
+                <td>
+                    <select name="" id="">
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                        <option value="">Option 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Textarea: </td>
+                <td>
+                    <textarea name="" id=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Button</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+ 
+</body>
+</html>

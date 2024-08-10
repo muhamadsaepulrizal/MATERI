@@ -1,0 +1,19 @@
+body{
+    background-image:url(/gambar/trees.png) ;
+}
+
+.satu{
+    width: 300px;
+    height: 300px;
+    background-color: hsla(0, 88%, 50%, 0.5);
+    position: relative;
+}
+
+.dua{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+}

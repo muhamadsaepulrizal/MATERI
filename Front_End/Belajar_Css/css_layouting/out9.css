@@ -1,0 +1,35 @@
+body{
+    height: 2000px;
+}
+
+.kotak{
+    /* height: 50px; */
+    /* width: 100%; bisa diganti dengan right: 0;*/
+    background-color: black;
+    position: fixed;
+    top: 100px;
+    bottom: 100px; /*maka akan saling menarik kebawah dan keatas sehingga elemen memenuhi layar*/
+    left: 100px;
+    right: 100px; /*dgn left 0, right 0 = seakan2 saling tarik-menarik*/
+    opacity: 0.7; /*u atur transparan*/
+    /*dan top,bottom dll dari nilai 0 yg memenuhi layar
+    bisa diganti menjadi 100px semuanya sehingga seperti iklan yg diweb*/
+
+}
+
+.kotak .close{
+    /* membuat tombol close pada sebuah iklan */
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 50%; /*u bentuk bulat pada tombol close*/
+    position: absolute;
+    top: -20px; /*supaya berada di atas keluar sedikit*/
+    right: -20px; /*supaya berada dikanan keluar sedikit*/
+}
+
+
+h1{
+    margin-top: 50px;
+}

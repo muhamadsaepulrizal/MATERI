@@ -1,0 +1,22 @@
+div{
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    background-color: orange;
+    border-radius: 50%;
+    /* border-top-right-radius: 50%; */
+    /* border-bottom-left-radius: 50%; */
+    /* border-radius: 0 50% 0 50%;
+    background-image: url(/gambar/sasuke.jpg);
+    background-repeat: no-repeat; /*supaya gambar tidak berulang*/
+    /*background-size: cover; membuat gambar pas seperti cover */
+    text-align: center;
+    line-height: 300px;
+    overflow: hidden;
+}
+
+div img{
+    width: 300px;
+    height: 300px;
+}
+

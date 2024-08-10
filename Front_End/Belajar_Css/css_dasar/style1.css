@@ -1,0 +1,16 @@
+h1{
+    color: darkblue;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif; /**value bisa >= 1, yg dijalankan ke-1 value 1 = Arial**/
+    font-size: 50px;
+    font-variant: small-caps;
+    font-style: italic;
+}
+p{
+    font-family: serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: oblique;
+    line-height: 20px; /**untk jarak paragraf**/
+}
+

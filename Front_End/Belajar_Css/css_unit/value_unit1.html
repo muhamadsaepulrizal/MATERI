@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar value & unit css em&rem</title>
+    <style>
+        /*contoh rem*/
+        html{
+            font-size: 50px; /*disini parent rem-nya 50px*/
+        }
+        /*contoh em*/
+        .box{
+            font-size: 30px; /*disini parent em nya 30px*/
+        }
+        .box h1{
+            /* font-size: 1em; /*elemen ikut parent(.box) 1em maka = 30px*/
+            font-size: 1rem; /*elemen ikut parent yg html/root , maka 1rem = 50px*/
+        }
+        .box p{
+            /*font-size: 2em; /*elemen ikut parent(.box) maka 2em = 2x30px = 60px*/
+            font-size: 2rem; /*elemen ikut parent yg html/root, maka 2rem = 100px*/
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Hello World</h1>
+        <p>Muhamad Saepul Rizal</p>
+    </div>
+    
+</body>
+</html>
